@@ -1,7 +1,7 @@
 <?php
 	require_once('header.php');
 	require_once('navmenu.php'); 
-	require_once('connect_vars.php');		
+	require_once('constants.php');		
 	//Retrieve data and validate
 	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$id=mysqli_real_escape_string($dbc,trim($_GET['id']));

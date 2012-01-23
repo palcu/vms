@@ -1,4 +1,4 @@
-First create `connect_vars.php` file.
+First create `constants.php` file.
 
 ```php
 <?php

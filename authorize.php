@@ -1,5 +1,4 @@
 <?php
-	require_once('connect_vars.php');
 	error_reporting(E_ALL);
 	
 	//Verify user and pw in database

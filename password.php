@@ -5,7 +5,7 @@
 ?>
 		<h1>Modifică parola</h1>
 <?php
-	require_once('connect_vars.php');
+	require_once('constants.php');
 	//Verify password
 	if (isset($_POST['submit'])){
 		$old=$_POST['old'];

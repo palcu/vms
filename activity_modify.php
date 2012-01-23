@@ -5,7 +5,7 @@
 ?>
 		<h1>Modifică activitate</h1>
 <?php
-	require_once('connect_vars.php');
+	require_once('constants.php');
 	
 	//Grab data
 	if (isset($_GET['id'])){

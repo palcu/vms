@@ -5,7 +5,7 @@
 ?>
 		<h1>Adaugă activitate</h1>
 <?php
-	require_once('connect_vars.php');
+	require_once('constants.php');
 	
 	if(isset($_POST['submit'])){
 		//Grab values

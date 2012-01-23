@@ -1,9 +1,9 @@
 <?php
 	require_once('header.php'); 
 	require_once('navmenu.php');
-	require_once('connect_vars.php');
+	require_once('constants.php');
 ?>
-		<h1>Europe Direct Vâlcea<br />Volunteer Management System</h1>
+    <h1><?=TITLE?><br />Volunteer Management System</h1>
 		
 		<div id="last_activities">
 			<h2>Ultimele activități</h2>
