@@ -1,0 +1,38 @@
+body{
+	font-family: Tahoma, Geneva, sans-serif;
+	background-color: #F2F2F2;
+}
+body a{
+	text-decoration: none;
+}
+body a:hover{
+	text-decoration: underline;
+}
+table{
+	border: 1px solid black;
+}
+td{
+	border: 1px solid black;
+	padding: 5px;
+	text-align:center;
+}
+#last_activities{
+	float:right;
+	width:33%;
+}
+#top_volunteers{
+	padding-top: 1px;
+}
+#container{
+	min-height:580px;
+}
+#sidebar{
+	width:30%;
+	float: right;
+	border-left: 2px solid black;
+	padding-left: 10px;
+}
+#footer{
+	clear:both;
+	margin-top:100px;
+}
