@@ -3,7 +3,7 @@
 			<ul id="menu"><?php
 if (!isset($_SERVER['PHP_AUTH_USER'])) echo'
 				<li><a href="index.php">Acasa</a></li>
-				<li><a href="authentification.php">Autentificare</a></li>
+				<li><a href="authentication.php">Autentificare</a></li>
 ';
 else echo'
 				<li><a href="index.php">Acasa</a></li>

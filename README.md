@@ -6,5 +6,6 @@ First create `connect_vars.php` file.
   define('DB_USER','alex');
   define('DB_PASSWORD','');
   define('DB_NAME','points');
+  define('REALM', 'My Secret Realm');
 ?>
 ```

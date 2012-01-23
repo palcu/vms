@@ -25,7 +25,7 @@
 			!valid_user($_SERVER['PHP_AUTH_USER'],$_SERVER['PHP_AUTH_PW'])){
 			//Incorect
 		header('HTTP/1.1 401 Unauthorize');
-		header('WWW-Authenticate:Basic realm="Europe Direct VMS"');
+		header('WWW-Authenticate:Basic realm="'.$REALM.'"');
 		exit('<h1>Europe Direct VMS</h1><br />Date de autentificare incorecte.');
 	}
 ?>
