@@ -1,4 +1,10 @@
-First create `constants.php` file.
+# Volunteer Management System
+
+## Description
+My first PHP project for a local NGO. Volunteers and activities are stored in a database, and for each activity the volunteer completes, he gets a number of points. At the end of the year, the top volunteers receive a prize, and all the other people can see transparently.
+
+## Instalation
+Create a new databse from `schema.sql`. Then create `constants.php` file. The realm is only for [HTTP Authentification](http://en.wikipedia.org/wiki/Basic_access_authentication).
 
 ```php
 <?php
@@ -7,5 +13,18 @@ First create `constants.php` file.
   define('DB_PASSWORD','');
   define('DB_NAME','points');
   define('REALM', 'My Secret Realm');
+  define('TITLE', 'Europe Direct Valcea')
 ?>
 ```
+
+## Problems
+* Passwords for admins are stored as plain-text in database... I got lazy and forgot to implement this
+* Use only alphanumeric characters for naming
+
+## MIT License
+Copyright (c) 2012 Alexandru Palcuie
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
