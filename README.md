@@ -1,7 +1,7 @@
 # Volunteer Management System
 
 ## Description
-My first PHP project for a local NGO. Volunteers and activities are stored in a database, and for each activity the volunteer completes, he gets a number of points. At the end of the year, the top volunteers receive a prize, and all the other people can see transparently.
+My first PHP project for a local NGO. Volunteers and activities are stored in a database, and for each activity the volunteer completes, he gets a number of points. At the end of the year, the top volunteers receive a prize, and all the other people can see transparently their hard work.
 
 ## Instalation
 Create a new databse from `schema.sql`. Then create `constants.php` file. The realm is only for [HTTP Authentification](http://en.wikipedia.org/wiki/Basic_access_authentication).
@@ -19,7 +19,7 @@ Create a new databse from `schema.sql`. Then create `constants.php` file. The re
 ```
 
 ## Problems
-* Passwords for admins are stored as plain-text in database... I got lazy and forgot to implement this
+* Passwords for admins are stored as plain-text in database... I got lazy and forgot to implement MD5 for passwords
 * Use only alphanumeric characters for naming
 * Spaghetti code... lots of it
 * Ugly design (planning to use Bootstrap for next version)
