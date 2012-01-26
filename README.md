@@ -23,6 +23,10 @@ Create a new databse from `schema.sql`. Then create `constants.php` file. The re
 * Spaghetti code... lots of it
 * Ugly design (planning to use Bootstrap for next version)
 
+## Examples
+* http://voluntari.cicvalcea.ro/
+* http://voluntari.fundatiacasacartii.ro/
+
 ## MIT License
 Copyright (c) 2012 Alexandru Palcuie
 
