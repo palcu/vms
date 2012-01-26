@@ -13,7 +13,8 @@ Create a new databse from `schema.sql`. Then create `constants.php` file. The re
   define('DB_PASSWORD','');
   define('DB_NAME','points');
   define('REALM', 'My Secret Realm');
-  define('TITLE', 'Europe Direct Valcea')
+  define('TITLE', 'Europe Direct Valcea');
+  define('MAIN_HOME_PAGE', 'http://cicvalcea.ro'); //footer link
 ?>
 ```
 
