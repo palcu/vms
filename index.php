@@ -6,7 +6,7 @@
     <h1><?=TITLE?><br />Volunteer Management System</h1>
 		
 		<div id="last_activities">
-			<h2>Ultimele activități</h2>
+			<h2>Ultimele Activități</h2>
 			<ul>
 <?php
 	//Query database
