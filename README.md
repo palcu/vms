@@ -1,8 +1,9 @@
 # Volunteer Management System
-![Screenshot](https://github.com/palcu/vms/raw/master/screenshots/s1_voluntari.png)
 
 ## Description
 My first PHP project for a local NGO. Volunteers and activities are stored in a database, and for each activity the volunteer completes, he gets a number of points. At the end of the year, the top volunteers receive a prize, and all the other people can see transparently their hard work.
+
+![Screenshot](https://github.com/palcu/vms/raw/master/screenshots/s1_voluntari.png)
 
 ## Instalation
 Create a new databse from `schema.sql`. Then create `constants.php` file. The realm is only for [HTTP Authentification](http://en.wikipedia.org/wiki/Basic_access_authentication).
