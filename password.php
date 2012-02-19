@@ -5,12 +5,11 @@
 ?>
 		<h1>Modifică parola</h1>
 <?php
-	require_once('constants.php');
 	//Verify password
 	if (isset($_POST['submit'])){
-		$old=$_POST['old'];
-		$new=$_POST['new'];
-		$new2=$_POST['new2'];
+		$old=md5($_POST['old']);
+		$new=md5($_POST['new']);
+		$new2=md5($_POST['new2']);
 		$user=$_SERVER['PHP_AUTH_USER'];
 		
 		//Query database for old password

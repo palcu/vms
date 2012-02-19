@@ -23,7 +23,6 @@ Create a new databse from `schema.sql`. Then create `constants.php` file. The re
 Also, you can create a `navmenu_links.html` file, where you can add custom links to the navigation menu.
 
 ## Problems
-* Passwords for admins are stored as plain-text in database... I got lazy and forgot to implement MD5 for passwords
 * Use only alphanumeric characters for naming
 * Spaghetti code... lots of it
 * Ugly design (planning to use Bootstrap for next version)

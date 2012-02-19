@@ -22,7 +22,7 @@
 	//Body
 	if (!isset($_SERVER['PHP_AUTH_USER']) ||
 	    !isset($_SERVER['PHP_AUTH_PW']) ||
-			!valid_user($_SERVER['PHP_AUTH_USER'],$_SERVER['PHP_AUTH_PW'])){
+			!valid_user($_SERVER['PHP_AUTH_USER'],md5($_SERVER['PHP_AUTH_PW']))){
 			//Incorect
 		header('HTTP/1.1 401 Unauthorize');
 		header('WWW-Authenticate:Basic realm="'.$REALM.'"');
