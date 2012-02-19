@@ -5,23 +5,26 @@
 	
 	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$id=mysqli_real_escape_string($dbc,trim($_GET['id']));
-	$name=mysqli_real_escape_string($dbc,trim($_GET['name']));
-	$date=mysqli_real_escape_string($dbc,trim($_GET['date']));
-	mysqli_close($dbc);
-	if(empty($name)||!is_numeric($id)||!is_numeric($date))
+	if(!is_numeric($id))
 		die ("Bad idea");
 	
 		//Query database
-	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+  //Get volunteers
 	$query = "SELECT v.nume name, p.points points, p.description description
 FROM points AS p
 INNER JOIN voluntar AS v ON p.id_volunteer=v.id
 WHERE p.id_activity=$id
 ORDER BY points DESC";
-	$data = mysqli_query($dbc, $query);
+  $data = mysqli_query($dbc, $query);
+  
+  //Get information
+  $query = "SELECT name, date FROM activity where id=$id";
+  $activity = mysqli_fetch_array(mysqli_query($dbc, $query));
+
 	mysqli_close($dbc);
 ?>
-		<h1><?php echo $name.' - '.date("d.m.Y",$date); ?></h1>
+		<h1><?= $activity[0].' - '.date("d.m.Y",$activity[1]) ?></h1>
 		<table>
 <?php
 	echo'			<tr>

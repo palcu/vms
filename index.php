@@ -13,11 +13,10 @@
 	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$query="SELECT id,name,date FROM activity ORDER BY date DESC";
 	$data = mysqli_query($dbc, $query);
-	mysqli_close($dbc);
 	
 	//Cycle through activities
 	while($row=mysqli_fetch_array($data)){
-		echo "				".'<li><a href="show_activity.php?id='.$row['id'].'&name='.$row['name'].'&date='.$row['date'].'">'.$row['name'].'</a> - '.date("d.m.Y",$row['date']).'</li>'."\r\n";
+		echo "				".'<li><a href="show_activity.php?id='.$row['id'].'">'.$row['name'].'</a> - '.date("d.m.Y",$row['date']).'</li>'."\r\n";
 	}
 ?>
 			</ul>
@@ -28,7 +27,6 @@
 <?php
 			
 	//Query database
-  $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
   //Get volunteers with points
 	$query = "SELECT v.id,v.nume,SUM(p.points) AS total
 FROM points AS p
@@ -47,13 +45,13 @@ ORDER BY total DESC";
 	
 	//Cycle through users
 	while($row = mysqli_fetch_array($data)){
-		echo "				".'<li><a href="show_volunteer.php?id='.$row['id'].'&name='.$row['nume'].'">'.$row['nume'].'</a> - '.$row['total'].' puncte</li>'."\r\n";
+		echo "				".'<li><a href="show_volunteer.php?id='.$row['id'].'">'.$row['nume'].'</a> - '.$row['total'].' puncte</li>'."\r\n";
     $volunteers_with_points[$row['id']] = true;
   }
 
   while($row = mysqli_fetch_array($volunteers)){
     if(!$volunteers_with_points[$row['id']]){
-      echo "        ".'<li><a href="show_volunteer.php?id='.$row['id'].'&name='.$row['nume'].'">'.$row['nume'].'</a> - 0 puncte</li>'."\r\n";
+      echo "        ".'<li><a href="show_volunteer.php?id='.$row['id'].'">'.$row['nume'].'</a> - 0 puncte</li>'."\r\n";
     }
   }
 ?>

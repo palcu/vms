@@ -36,3 +36,8 @@ td{
 	clear:both;
 	margin-top:100px;
 }
+.mail-decrypt{
+  unicode-bidi:bidi-override;
+  direction: rtl;
+  font-size:80%;
+}

@@ -5,22 +5,24 @@
 	//Retrieve data and validate
 	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$id=mysqli_real_escape_string($dbc,trim($_GET['id']));
-	$name=mysqli_real_escape_string($dbc,trim($_GET['name']));
-	mysqli_close($dbc);
-	if(empty($name)||!is_numeric($id))
+	if(!is_numeric($id))
 		die ("Bad idea");
-	
-	//Query database
-	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+  //Get points
 	$query = "SELECT p.points AS points, a.name AS name, a.date AS date, p.description AS description
 FROM points AS p
 INNER JOIN activity AS a ON p.id_activity=a.id
 WHERE p.id_volunteer=$id
 ORDER BY date";
 	$data = mysqli_query($dbc, $query);
+
+  //Get volunteer info
+  $query = "SELECT nume, email FROM voluntar WHERE id=$id";
+  $volunteer = mysqli_fetch_array(mysqli_query($dbc, $query));
+
 	mysqli_close($dbc);
 ?>
-		<h1><?php echo $name; ?></h1>
+		<h1><?= $volunteer[0].' <br /><span class="mail-decrypt">'.strrev($volunteer[1]).'</span>' ?></h1>
 		<table>
 <?php
 	echo '			<tr>
