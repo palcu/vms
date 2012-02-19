@@ -28,19 +28,34 @@
 <?php
 			
 	//Query database
-	$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+  $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+  //Get volunteers with points
 	$query = "SELECT v.id,v.nume,SUM(p.points) AS total
 FROM points AS p
 INNER JOIN voluntar AS v ON p.id_volunteer=v.id
 GROUP BY v.id
 ORDER BY total DESC";
-	$data = mysqli_query($dbc, $query);
+  $data = mysqli_query($dbc, $query);
+  
+  //Get all volunteers
+  $query = "SELECT id, nume FROM voluntar";
+  $volunteers = mysqli_query($dbc, $query);
+
 	mysqli_close($dbc);
+
+  $volunteers_with_points = array();
 	
 	//Cycle through users
 	while($row = mysqli_fetch_array($data)){
 		echo "				".'<li><a href="show_volunteer.php?id='.$row['id'].'&name='.$row['nume'].'">'.$row['nume'].'</a> - '.$row['total'].' puncte</li>'."\r\n";
-	}
+    $volunteers_with_points[$row['id']] = true;
+  }
+
+  while($row = mysqli_fetch_array($volunteers)){
+    if(!$volunteers_with_points[$row['id']]){
+      echo "        ".'<li><a href="show_volunteer.php?id='.$row['id'].'&name='.$row['nume'].'">'.$row['nume'].'</a> - 0 puncte</li>'."\r\n";
+    }
+  }
 ?>
 			</ol>
 		</div>
