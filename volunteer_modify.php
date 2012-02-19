@@ -30,11 +30,17 @@
 		echo "		<p>Voluntarul a fost modificat.</p>";
 	}
 	else if (isset($_POST['delete'])){
-		//Delete entry from database
 		$id=$_POST['id'];
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+		//Delete entry from voluntari table
 		$query="DELETE FROM voluntar WHERE id=$id";
 		mysqli_query($dbc, $query);
+
+    //Delete entry from points table
+    $query="DELETE FROM points WHERE id_volunteer=$id";
+		mysqli_query($dbc, $query);
+
 		mysqli_close($dbc);
 		echo "		<p>Voluntarul a fost sters.</p>";
 		

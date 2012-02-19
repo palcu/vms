@@ -5,7 +5,6 @@
 ?>
 		<h1>Modifică activitate</h1>
 <?php
-	require_once('constants.php');
 	
 	//Grab data
 	if (isset($_GET['id'])){
@@ -32,11 +31,17 @@
 		echo "		<p>Activitatea a fost modificată.</p>";
 	}
 	else if (isset($_POST['delete'])){
-		//Delete entry from database
 		$id=$_POST['id'];
 		$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+
+    //Delete entry from activity table
 		$query="DELETE FROM activity WHERE id=$id";
 		mysqli_query($dbc, $query);
+
+    //Delete from points table
+    $query="DELETE FROM points WHERE id_activity=$id";
+		mysqli_query($dbc, $query);
+
 		mysqli_close($dbc);
 		echo "		<p>Activitatea a fost ștearsă.</p>";
 		
