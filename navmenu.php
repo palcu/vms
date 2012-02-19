@@ -11,6 +11,8 @@ else echo'
 				<li><a href="activity.php">Activitati</a></li>
 				<li><a href="points.php">Puncte</a></li>
 				<li><a href="password.php">Modificare parola</a></li>
-';?>
+';
+        require_once("navmenu_links.html");
+?>
 			</ul>
 		</div>
