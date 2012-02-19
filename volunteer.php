@@ -5,7 +5,6 @@
 ?>
 		<h1>Adaugă voluntari</h1>
 <?php
-	require_once('constants.php');
 	
 	if (isset($_POST['submit'])){
 		

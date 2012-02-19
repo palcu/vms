@@ -1,4 +1,5 @@
 <?php
+  require_once('constants.php');
 	error_reporting(E_ALL);
 	
 	//Verify user and pw in database

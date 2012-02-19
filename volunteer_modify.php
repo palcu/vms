@@ -5,7 +5,6 @@
 ?>
 		<h1>Modifica voluntar</h1>
 <?php
-	require_once('constants.php');
 	
 	//Grab data
 	if (isset($_GET['id'])){
