@@ -6,7 +6,16 @@ My first PHP project for a local NGO. Volunteers and activities are stored in a 
 ![Screenshot](https://github.com/palcu/vms/raw/master/screenshots/s1_voluntari.png)
 
 ## Instalation
-Create a new databse from `schema.sql`. Then create `constants.php` file. The realm is only for [HTTP Authentification](http://en.wikipedia.org/wiki/Basic_access_authentication).
+Create a new database from `schema.sql` and create an admin.
+
+```mysql
+create database points;
+use points;
+source schema.sql;
+insert into admin (user_name, user_password) values ('alex', md5('alex'));
+```
+
+Then create `constants.php` file. The realm is only for [HTTP Authentification](http://en.wikipedia.org/wiki/Basic_access_authentication).
 
 ```php
 <?php
